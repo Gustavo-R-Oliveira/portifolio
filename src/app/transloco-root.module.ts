@@ -14,7 +14,8 @@ export class TranslocoHttpLoader implements TranslocoLoader {
   constructor(private http: HttpClient) {}
 
   getTranslation(lang: string) {
-    return this.http.get<Translation>(`/assets/i18n/${lang}.json`);
+    const path = isDevMode() ? '' : '/portifolio';
+    return this.http.get<Translation>(`${path}/assets/i18n/${lang}.json`);
   }
 }
 

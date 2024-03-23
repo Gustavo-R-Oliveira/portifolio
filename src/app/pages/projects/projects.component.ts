@@ -16,11 +16,11 @@ export class ProjectsComponent implements AfterViewInit, OnChanges {
   @Input() isSmallScreen = false;
 
   public imgs: { src: string }[] = [
-    { src: '../../../assets/imgs/coming-soon.jpg' },
-    { src: '../../../assets/imgs/coming-soon-2.jpg' },
-    { src: '../../../assets/imgs/coming-soon-3.jpg' },
-    { src: '../../../assets/imgs/coming-soon-4.jpg' },
-    { src: '../../../assets/imgs/coming-soon-5.jpg' },
+    { src: 'assets/imgs/coming-soon.jpg' },
+    { src: 'assets/imgs/coming-soon-2.jpg' },
+    { src: 'assets/imgs/coming-soon-3.jpg' },
+    { src: 'assets/imgs/coming-soon-4.jpg' },
+    { src: 'assets/imgs/coming-soon-5.jpg' },
   ];
 
   selectedIndex = 1;
