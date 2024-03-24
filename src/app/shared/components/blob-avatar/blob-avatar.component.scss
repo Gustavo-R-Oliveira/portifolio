@@ -18,3 +18,10 @@ img {
     border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
   }
 }
+
+@media (max-width: 450px) {
+  img {
+    width: 250px;
+    height: 250px;
+  }
+}
