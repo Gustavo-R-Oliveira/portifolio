@@ -1,8 +1,9 @@
 <img
   class="icon"
-  [src]="'assets/icons/' + icon"
+  [src]="link ? icon : 'assets/icons/' + icon"
   [width]="width"
   [height]="height"
   [alt]="alt"
+  [title]="alt"
   [class]="styleClass"
 />

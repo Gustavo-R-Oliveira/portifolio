@@ -12,4 +12,5 @@ export class IconComponent {
   @Input() height = '50';
   @Input() alt = '';
   @Input() styleClass = '';
+  @Input() link = false;
 }

@@ -4,15 +4,19 @@
     <span class="green">{{ t("project.title-1-end") }}</span>
   </div>
   <div class="card-container">
-    <div
+    <a
+      *ngFor="let card of cards; let i = index"
+      [href]="card.link"
+      [target]="card.comingSoon ? '' :  '_blank'"
+      rel="noopener noreferrer"
       data-tilt
       data-tilt-glare
       data-tilt-max="5"
       data-tilt-reverse="true"
       data-tilt-max-glare="0.5"
-      class="card-item vanillaTilt coming-soon"
-      *ngFor="let img of imgs; let i = index"
+      class="card-item vanillaTilt"
       [ngClass]="{
+        'coming-soon': card.comingSoon,
         slider: isSmallScreen,
         effect: !isSmallScreen,
         selected: i === selectedIndex && isSmallScreen,
@@ -26,16 +30,15 @@
     >
       <div
         class="card-img"
-        [style.background-image]="'url(' + img.src + ')'"
+        [style.background-image]="'url(' + card.img + ')'"
       ></div>
       <div class="card-text">
-        <div class="card-title"><span class="green">Lorem</span> ipsum</div>
+        <div class="card-title">{{ card.title }}
+        </div>
         <div class="card-description">
-          dolor sit amet consectetur adipisicing elit. Doloremque illum nam
-          nobis, minima laudantium fugit sequi nostrum quod impedit, beatae
-          necessitatibus praesentium optio labore nemo!
+          {{ card.description }}
         </div>
       </div>
-    </div>
+    </a>
   </div>
 </div>

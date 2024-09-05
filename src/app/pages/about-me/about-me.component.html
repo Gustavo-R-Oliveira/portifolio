@@ -11,12 +11,7 @@
   <div class="tech-stack">
     <div class="title-2">TECH STACK</div>
     <div class="icons-group">
-      <icon width="35" height="35" icon="icon-css3.png"></icon>
-      <icon width="35" height="35" icon="icon-html5.png"></icon>
-      <icon width="35" height="35" icon="icon-javascript.png"></icon>
-      <icon width="35" height="35" icon="icon-typescript.png"></icon>
-      <icon width="35" height="35" icon="icon-sass.png"></icon>
-      <icon width="35" height="35" icon="icon-angular.png"></icon>
+      <icon *ngFor="let icon of icons" width="35" height="35" [icon]="icon.src" [alt]="icon.alt" [link]="true"></icon>
     </div>
   </div>
 </div>

@@ -7,6 +7,14 @@ import {
 } from '@angular/core';
 import VanillaTilt from 'vanilla-tilt';
 
+interface ICard {
+  img: string;
+  link: string;
+  comingSoon: boolean;
+  title: string;
+  description: string;
+}
+
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
@@ -15,12 +23,27 @@ import VanillaTilt from 'vanilla-tilt';
 export class ProjectsComponent implements AfterViewInit, OnChanges {
   @Input() isSmallScreen = false;
 
-  public imgs: { src: string }[] = [
-    { src: 'assets/imgs/coming-soon.jpg' },
-    { src: 'assets/imgs/coming-soon-2.jpg' },
-    { src: 'assets/imgs/coming-soon-3.jpg' },
-    { src: 'assets/imgs/coming-soon-4.jpg' },
-    { src: 'assets/imgs/coming-soon-5.jpg' },
+  public cards: ICard[] = [
+    {
+      img: 'assets/imgs/pokedex.png',
+      link: 'https://gustavo-r-oliveira.github.io/pokedex/',
+      comingSoon: false,
+      title: 'Pokedex',
+      description: `Uma simples pokedex utlizando Angular-v15 e hammerjs 
+      para seu desenvolvimento e consumindo a API da PokéAPI
+      onde se pode ter as informações básicas de todos
+      os pokemons.`,
+    },
+    {
+      img: 'assets/imgs/rxeasycache.png',
+      link: '#',
+      comingSoon: true,
+      title: 'RxEasycache',
+      description: `Inspirado em partes do NgRx e utilizando 
+      somente RxJs, o RxEasyCache foi criado para fornecer um
+      cache menos burocrático e mais automatizado para o desenvolvedor 
+      utilizar em suas aplicações.`,
+    },
   ];
 
   selectedIndex = 1;
@@ -71,7 +94,7 @@ export class ProjectsComponent implements AfterViewInit, OnChanges {
   }
 
   showNext(index: number): void {
-    if (this.selectedIndex < this.imgs.length - 1) {
+    if (this.selectedIndex < this.cards.length - 1) {
       this.selectedIndex = index + 1;
     }
   }
