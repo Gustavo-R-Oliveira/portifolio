@@ -36,8 +36,8 @@ export class ProjectsComponent implements AfterViewInit, OnChanges {
     },
     {
       img: 'assets/imgs/rxeasycache.png',
-      link: '#',
-      comingSoon: true,
+      link: 'https://github.com/Gustavo-R-Oliveira/rx-easy-cache',
+      comingSoon: false,
       title: 'RxEasycache',
       description: `Inspirado em partes do NgRx e utilizando 
       somente RxJs, o RxEasyCache foi criado para fornecer um
